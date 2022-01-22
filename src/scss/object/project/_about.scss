@@ -1,0 +1,51 @@
+.p-about {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.p-about__list {
+  width: 94%;
+  margin: 50px auto;
+}
+
+.p-about__item {
+  overflow: hidden;
+}
+
+.p-about__img {
+  width: 100%;
+  height: 30vw;
+  object-fit: cover;
+  &:hover {
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+  }
+}
+
+.p-about__list .slick-slide {
+  margin: 0 10px;
+}
+
+.p-about__text {
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: 2px dotted #999;
+}
+
+
+// .p-about__text span {
+// 	display: none;
+// }
+
+// /*文字列後ろの線の設定*/
+// .p-about__text::after {
+//  	content: "|";
+// 	animation: typinganime .8s ease infinite;
+// }
+
+// @keyframes typinganime{
+// 	from{opacity:0}
+// 	to{opacity:1}
+// }
+

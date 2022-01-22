@@ -1,0 +1,167 @@
+<%  var title = "TOP";
+    var description = "トップのdescription";
+    var url = "../assets/images/";
+    var aboutItem = [
+      {img: "nishimura.jpg", alt: "ニシムラ　キョウヘイ"},
+      {img: "aichi.png", alt: "愛知県"},
+      {img: "soccer.jpg", alt: "サッカー"},
+      {img: "golf.jpg", alt: "ゴルフ"},
+      {img: "fitness.jpg", alt: "フィットネス"},
+      {img: "bath.jpg", alt: "温泉"},
+      {img: "dorive.jpg", alt: "ドライブ"},
+      {img: "sauna.jpg", alt: "サウナ"},
+    ];
+    var accordionItem = [
+      {title:"名前", text:"西村匡平"},
+      {title:"生年月日", text:"1997/10/26"},
+      {title:"出身", text:"愛知県"},
+      {title:"趣味", text:"スポーツ（特にサッカー）,温泉旅行,ドライブ,サウナ"},
+      {title:"自己PR", text:"コミュニケーン力には自信があり、どんな人とも分け隔てなく接することができる"},
+    ];
+    var tabTitle = [
+      {href:"#frontend", title:"フロントエンド"},
+      {href:"#backend", title:"バックエンド"},
+      {href:"#tool", title:"ツール"},
+      ];
+    var snsIcon = [
+      {img:"twitter.png", alt:"twitterアイコン"},
+      {img:"instagram.png", alt:"instagramアイコン"},
+      {img:"facebook.png", alt:"facebookアイコン"},
+    ];
+%>
+<% include src/ejs/template/_head %>
+
+<main class="l-main">
+  <section class="p-home scroll-point" id="home">
+    <div id="particles-js"></div>
+    <div id="wrapper">
+      <img src="<%= url %>home.jpg" alt="homeの背景画像" class="p-home__img">
+      <div class="p-home__text">
+        <div class="p-home__title">Nishimura Kyohei</div>
+        <div class="p-home__subtitle">Web Front Engineer</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-about scroll-point" id="about">
+    <div class="c-topic">About Me</div>
+    <ul class="p-about__list">
+      <% aboutItem.forEach(function(i) { %>
+        <li class="p-about__item">
+          <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-about__img">
+        </li>
+      <% }); %>
+    </ul>
+    <ul class="p-accordion">
+      <% accordionItem.forEach(function(i) { %>
+        <li class="p-accordion__item">
+          <div class="p-accordion__section">
+            <h3 class="p-accordion__title"><%= i.title %></h3>
+            <div class="p-accordion__box">
+              <p class="p-accordion__text"><%= i.text %></p>
+            </div>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+      <a href="" class="c-detail__link">さらに詳しく</a>
+  </section>
+
+  <section class="p-skills scroll-point" id="skills">
+    <div class="c-topic">My Skill</div>
+    <!-- <div class="p-skills__chartArea">
+      <canvas id="p-skills__chart"></canvas>
+    </div> -->
+    <ul class="p-tab">
+      <% tabTitle.forEach(function(i) { %>
+        <li class="p-tab__title">
+          <a href="<%= i.href %>" class="p-tab__link"><%= i.title %></a>
+        </li>
+      <% }) %>
+    </ul>
+
+    <div class="p-tab__contents">
+      <div id="frontend" class="p-tab__area">
+        <h2>フロントエンド　言語</h2>
+        <ul>
+          <li>HTML/CSS</li>
+          <li>ejs/scss</li>
+          <li>JavaScript/jQuery</li>
+          <ul class="p-tab__areaIcon">
+            <li>
+              <img src="<%= url %>html.jpg" alt="htmlロゴ" class="p-tab__areaIconImg">
+            </li>
+            <li>
+              <img src="<%= url %>css.jpg" alt="htmlロゴ" class="p-tab__areaIconImg">
+            </li>
+            <li>
+              <img src="<%= url %>javascript.jpg" alt="htmlロゴ" class="p-tab__areaIconImg">
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div id="backend" class="p-tab__area">
+        <h2>バックエンド　言語</h2>
+        <ul>
+          <li>PHP</li>
+          <li>PHP</li>
+          <li>PHP</li>
+          <img src="<%= url %>php.jpg" alt="phpロゴ" class="p-tab__areaIconImg">
+        </ul>
+      </div>
+      <div id="tool" class="p-tab__area">
+        <h2>使用ツール</h2>
+        <ul>
+          <li>Webpack</li>
+          <li>node.js</li>
+          <li>vs code</li>
+          <ul class="p-tab__areaIcon">
+            <li><img src="<%= url %>webpack.jpg" alt="webpackロゴ" class="p-tab__areaIconImg"></li>
+            <li><img src="<%= url %>node.js.jpg" alt="node.jsロゴ" class="p-tab__areaIconImg"></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <a href="" class="c-detail__link">さらに詳しく</a>
+  </section>
+
+  <section class="p-contact scroll-point" id="contact">
+    <div class="c-topic">Contact Me</div>
+    <ul class="p-contact__sns">
+      <% snsIcon.forEach(function(i) { %>
+        <li class="p-contact__snsItem">
+          <a href="">
+            <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-contact__snsImg">
+          </a>
+        </li>
+      <% }); %>
+    </ul>
+    <div class="p-contact__cellphoneNumber">080-XXXX-XXXX</div>
+    <div class="p-inquiry">
+      <div class="p-inquiry__title">お問い合わせ</div>
+      <form class="p-inquiry__form" method="POST" action="confirm.php">
+        <div>
+          <label class="p-inquiry__label" for="name" value="">お名前：</label>
+          <input class="p-inquiry__textarea" id="name" type="text" name="name" placeholder="お名前">
+        </div>
+
+        <div>
+          <label class="p-inquiry__label" for="mail">メールアドレス：</label>
+          <input class="p-inquiry__textarea" id="mail" type="email" name="email" placeholder="メールアドレス">
+        </div>
+        <div>
+          <label class="p-inquiry__label" for="comment">お問い合わせ内容：</label><br >
+          <textarea class= "p-inquiry__textarea" id="comment" rows="10" cols="30" placeholder="お問い合わせ内容を入力して下さい"></textarea>
+        </div>
+        <div>
+          <input class="p-inquiry__btn" type="submit" value="送信">
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+
+
+<% include src/ejs/template/_footer %>

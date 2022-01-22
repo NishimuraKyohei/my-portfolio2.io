@@ -1,0 +1,26 @@
+.p-contact {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.p-contact__sns {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto;
+  padding: 0 50px;
+  max-width: 600px;
+}
+
+.p-contact__snsImg {
+  width: 100px;
+  height: 100px;
+  &:hover {
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+  }
+}
+
+.p-contact__cellphoneNumber{
+  font-size: 24px;
+}
+

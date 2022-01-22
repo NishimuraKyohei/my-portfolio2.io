@@ -1,0 +1,37 @@
+.p-inquiry {
+  max-width: 960px;
+  margin: 100px auto 0;
+  padding: 50px;
+  background: #aaa;
+  border-radius: 8px;
+}
+
+.p-inquiry__form {
+  text-align: left;
+}
+
+.p-inquiry__title {
+  font-size: 24px;
+}
+
+.p-inquiry__label {
+  margin-bottom: 50px;
+}
+
+.p-inquiry__textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.p-inquiry__btn {
+  margin-top: 20px;
+  background-color: #bfbfbf;
+  padding: 10px 20px;
+}
+
+.p-inquiry__btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}

@@ -1,0 +1,8 @@
+.l-main {
+  @include mq(u-sp) {
+
+  }
+  @include mq(o-sp) {
+    // padding: 70px 100px;
+  }
+}
