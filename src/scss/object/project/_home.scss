@@ -21,7 +21,12 @@
 
 .p-home__title {
   color: #fff;
-  font-size: 36px;
+  @include mq(u-sp) {
+    @include fontSize(24px, 2.4rem);
+  }
+  @include mq(o-sp) {
+    @include fontSize(36px, 3.6rem);
+  }
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
@@ -42,6 +47,11 @@
 
 .p-home__subtitle {
   color: #fff;
-  font-size: 30px;
+  @include mq(u-sp) {
+    @include fontSize(18px, 1.8rem);
+  }
+  @include mq(o-sp) {
+    @include fontSize(28px, 2.8rem);
+  }
   font-family: 'Times New Roman', Times, serif;
 }
