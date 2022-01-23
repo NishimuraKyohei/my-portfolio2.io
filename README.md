@@ -1,3 +1,3 @@
 # my-portfolio2.io
 
-my-portofolio second
+my-portofolio secuond
