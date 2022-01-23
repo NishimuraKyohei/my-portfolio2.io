@@ -2,27 +2,27 @@ import $ from 'jquery';
 import 'slick-carousel';
 
 export default function animateSlider() {
-  $('.p-about__list').slick({
-		autoplay: true,//自動的に動き出すか。初期値はfalse。
-		infinite: true,//スライドをループさせるかどうか。初期値はtrue。
-		slidesToShow: 3,//スライドを画面に3枚見せる
-		slidesToScroll: 3,//1回のスクロールで3枚の写真を移動して見せる
-		prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
-		nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
-		dots: true,//下部ドットナビゲーションの表示
+  $('.p-about__slide').slick({
+		autoplay: true,
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		prevArrow: '<div class="slick-prev"></div>',
+		nextArrow: '<div class="slick-next"></div>',
+		dots: true,
 		responsive: [
 			{
-			breakpoint: 769,//モニターの横幅が769px以下の見せ方
+			breakpoint: 769,
 			settings: {
-				slidesToShow: 2,//スライドを画面に2枚見せる
-				slidesToScroll: 2,//1回のスクロールで2枚の写真を移動して見せる
+				slidesToShow: 2,
+				slidesToScroll: 2,
 			}
 		},
 		{
-			breakpoint: 426,//モニターの横幅が426px以下の見せ方
+			breakpoint: 426,
 			settings: {
-				slidesToShow: 1,//スライドを画面に1枚見せる
-				slidesToScroll: 1,//1回のスクロールで1枚の写真を移動して見せる
+				slidesToShow: 1,
+				slidesToScroll: 1,
 			}
 		}
 	]

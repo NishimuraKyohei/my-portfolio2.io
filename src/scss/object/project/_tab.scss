@@ -7,7 +7,8 @@
 
 .p-tab__contents {
   max-width: 960px;
-  margin: 0 auto 100px;
+  margin: 0 auto;
+  background-color: #ddd;
 }
 
 .p-tab__link {
@@ -15,19 +16,25 @@
   background: #ddd;
   margin: 0 2px;
   padding: 10px 20px;
+  @include mq(u-sp) {
+    @include fontSize(10px, 1.0rem);
+  }
+  @include mq(o-sp) {
+    @include fontSize(14px, 1.4rem);
+  }
   &:hover {
     opacity: 0.5;
   }
 }
 
 .p-tab li.active .p-tab__link {
-  background: #fff;
+  background: rgb(182, 235, 206);
 }
 
 .p-tab__area {
   display: none;
 	opacity: 0;
-	background: #fff;
+	background: rgb(182, 235, 206);
 	padding:50px 20px;
   text-align: center;
 }
@@ -46,6 +53,15 @@
   to {
     opacity: 1;
   }
+}
+
+.p-tab__languageItem {
+  @include mq(u-sp) {
+        @include fontSize(14px, 1.4rem);
+      }
+      @include mq(o-sp) {
+        @include fontSize(18px, 1.8rem);
+      }
 }
 
 .p-tab__areaIcon {

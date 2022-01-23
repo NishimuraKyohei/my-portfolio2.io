@@ -13,4 +13,6 @@
         header('Content-Type: application/json');
         // echo json_encode(['data' => 'ok']);
         echo json_encode(['data' => 'ok']);
+
+        
 ?>

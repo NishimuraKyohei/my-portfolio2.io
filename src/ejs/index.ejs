@@ -1,6 +1,13 @@
 <%  var title = "TOP";
     var description = "トップのdescription";
     var url = "../assets/images/";
+    var homeImg = [
+      {img:"home.jpg", alt:"女性の写真"},
+      {img:"home2.jpg", alt:"カフェの写真"},
+      {img:"home3.jpg", alt:"森林の写真"},
+      {img:"home4.jpg", alt:"エンジニアの写真"},
+      {img:"home5.jpg", alt:"スプレー缶の写真"},
+    ];
     var aboutItem = [
       {img: "nishimura.jpg", alt: "ニシムラ　キョウヘイ"},
       {img: "aichi.png", alt: "愛知県"},
@@ -22,7 +29,24 @@
       {href:"#frontend", title:"フロントエンド"},
       {href:"#backend", title:"バックエンド"},
       {href:"#tool", title:"ツール"},
-      ];
+    ];
+    var frontendLanguage = ["HTML/CSS","ejs/scss","JavaScript/jQuery",];
+    var frontendImg = [
+      {img:"html.png", alt:"htmlアイコン"},
+      {img:"css.png", alt:"cssアイコン"},
+      {img:"javascript.png", alt:"javascriptアイコン"},
+    ];
+    var backendLanguage = ["PHP","Ruby"];
+    var backendImg = [
+      {img:"php.png", alt:"phpアイコン",},
+      {img:"ruby.png", alt:"rubyアイコン"},
+    ];
+    var tool = ["node.js","Webpack","vs code",];
+    var toolImg = [
+      {img:"node.js.png",alt:"node.jsアイコン",},
+      {img:"webpack.png",alt:"webpackアイコン"},
+      {img:"vs code.png",alt:"vs codeアイコン"},
+    ];
     var snsIcon = [
       {img:"twitter.png", alt:"twitterアイコン"},
       {img:"instagram.png", alt:"instagramアイコン"},
@@ -33,25 +57,20 @@
 
 <main class="l-main">
   <section class="p-home scroll-point" id="home">
-    <div id="particles-js"></div>
-    <div id="wrapper">
-      <img src="<%= url %>home.jpg" alt="homeの背景画像" class="p-home__img">
+      <ul class="p-home__slide">
+        <% homeImg.forEach(function(i) { %>
+          <li class="p-home__slideItem">
+            <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-home__slideImg">
+          </li>
+        <% }) %>
+      </ul>
       <div class="p-home__text">
         <div class="p-home__title">Nishimura Kyohei</div>
         <div class="p-home__subtitle">Web Front Engineer</div>
-      </div>
-    </div>
   </section>
 
   <section class="p-about scroll-point" id="about">
     <div class="c-topic">About Me</div>
-    <ul class="p-about__list">
-      <% aboutItem.forEach(function(i) { %>
-        <li class="p-about__item">
-          <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-about__img">
-        </li>
-      <% }); %>
-    </ul>
     <ul class="p-accordion">
       <% accordionItem.forEach(function(i) { %>
         <li class="p-accordion__item">
@@ -64,14 +83,18 @@
         </li>
       <% }); %>
     </ul>
-      <a href="" class="c-detail__link">さらに詳しく</a>
+    <ul class="p-about__slide">
+      <% aboutItem.forEach(function(i) { %>
+        <li class="p-about__slideItem">
+          <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-about__slideImg">
+        </li>
+      <% }); %>
+    </ul>
+      <a href="" class="c-detail">さらに詳しく</a>
   </section>
 
   <section class="p-skills scroll-point" id="skills">
     <div class="c-topic">My Skill</div>
-    <!-- <div class="p-skills__chartArea">
-      <canvas id="p-skills__chart"></canvas>
-    </div> -->
     <ul class="p-tab">
       <% tabTitle.forEach(function(i) { %>
         <li class="p-tab__title">
@@ -82,47 +105,50 @@
 
     <div class="p-tab__contents">
       <div id="frontend" class="p-tab__area">
-        <h2>フロントエンド　言語</h2>
-        <ul>
-          <li>HTML/CSS</li>
-          <li>ejs/scss</li>
-          <li>JavaScript/jQuery</li>
-          <ul class="p-tab__areaIcon">
-            <li>
-              <img src="<%= url %>html.jpg" alt="htmlロゴ" class="p-tab__areaIconImg">
-            </li>
-            <li>
-              <img src="<%= url %>css.jpg" alt="htmlロゴ" class="p-tab__areaIconImg">
-            </li>
-            <li>
-              <img src="<%= url %>javascript.jpg" alt="htmlロゴ" class="p-tab__areaIconImg">
-            </li>
-          </ul>
+        <ul class="p-tab__languageList">
+          <% frontendLanguage.forEach(function(i) { %>
+            <li class="p-tab__languageItem"><%= i %></li>
+          <% }) %>
         </ul>
+        <ul class="p-tab__areaIcon">
+          <% frontendImg.forEach(function(i) { %>
+            <li class="p-tab__areaIconItem">
+              <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-tab__areaIconImg">
+            </li>
+          <% }) %>
+      </ul>
       </div>
       <div id="backend" class="p-tab__area">
-        <h2>バックエンド　言語</h2>
-        <ul>
-          <li>PHP</li>
-          <li>PHP</li>
-          <li>PHP</li>
-          <img src="<%= url %>php.jpg" alt="phpロゴ" class="p-tab__areaIconImg">
+        <ul class="p-tab__languageList">
+          <% backendLanguage.forEach(function(i) { %>
+            <li class="p-tab__languageItem"><%= i %></li>
+          <% }) %>
+        </ul>
+        <ul class="p-tab__areaIcon">
+            <% backendImg.forEach(function(i) { %>
+              <li class="p-tab__areaIconItem">
+                <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-tab__areaIconImg">
+              </li>
+            <% }) %>
         </ul>
       </div>
       <div id="tool" class="p-tab__area">
-        <h2>使用ツール</h2>
-        <ul>
-          <li>Webpack</li>
-          <li>node.js</li>
-          <li>vs code</li>
-          <ul class="p-tab__areaIcon">
-            <li><img src="<%= url %>webpack.jpg" alt="webpackロゴ" class="p-tab__areaIconImg"></li>
-            <li><img src="<%= url %>node.js.jpg" alt="node.jsロゴ" class="p-tab__areaIconImg"></li>
-          </ul>
+        <ul class="p-tab__languageList">
+          <% tool.forEach(function(i) { %>
+            <li class="p-tab__languageItem"><%= i %></li>
+          <% }) %>
+        </ul>
+        <ul class="p-tab__areaIcon">
+          <% toolImg.forEach(function(i) { %>
+            <li class="p-tab__areaIconItem">
+              <img src="<%= url %><%= i.img %>" alt="<%= i.alt %>" class="p-tab__areaIconImg">
+            </li>
+          <% }) %>
         </ul>
       </div>
     </div>
-    <a href="" class="c-detail__link">さらに詳しく</a>
+    <a href="" class="c-detail">さらに詳しく</a>
+    <div class="p-fluid"></div>
   </section>
 
   <section class="p-contact scroll-point" id="contact">

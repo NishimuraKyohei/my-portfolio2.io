@@ -3,16 +3,16 @@
   text-align: center;
 }
 
-.p-about__list {
+.p-about__slide {
   width: 94%;
-  margin: 50px auto;
+  margin: auto;
 }
 
-.p-about__item {
+.p-about__slideItem {
   overflow: hidden;
 }
 
-.p-about__img {
+.p-about__slideImg {
   width: 100%;
   height: 30vw;
   object-fit: cover;
@@ -22,30 +22,13 @@
   }
 }
 
-.p-about__list .slick-slide {
-  margin: 0 10px;
-}
-
-.p-about__text {
-  padding: 20px;
-  font-size: 20px;
-  border-radius: 8px;
-  border: 2px dotted #999;
-}
 
 
-// .p-about__text span {
-// 	display: none;
-// }
 
-// /*文字列後ろの線の設定*/
-// .p-about__text::after {
-//  	content: "|";
-// 	animation: typinganime .8s ease infinite;
-// }
 
-// @keyframes typinganime{
-// 	from{opacity:0}
-// 	to{opacity:1}
-// }
+
+
+
+
+
 

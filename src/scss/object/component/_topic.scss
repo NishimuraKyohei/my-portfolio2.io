@@ -1,5 +1,10 @@
 .c-topic {
-  font-size: 30px;
+  @include mq(u-sp) {
+    @include fontSize(20px, 2.0rem);
+  }
+  @include mq(o-sp) {
+    @include fontSize(36px, 3.6rem);
+  }
   text-align: center;
   color: #333;
   font-family: 'Times New Roman', Times, serif;

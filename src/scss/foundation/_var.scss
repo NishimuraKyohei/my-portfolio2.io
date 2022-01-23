@@ -31,3 +31,13 @@ $colorDark: #012c45;
 $colorBlack: #222;
 $colorGray: #666;
 $colorWhite: #fff;
+
+// FONT-SIZE
+$fontConfig: 62.5%;
+@mixin fontSize($sizePx,$sizeRem) {
+  font-size: $sizePx;
+  font-size: $sizeRem;
+}
+
+
+

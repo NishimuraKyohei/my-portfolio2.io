@@ -2,11 +2,16 @@
   position: relative;
 }
 
-.p-home__img {
+.p-home__slideImg {
   width: 100%;
   height: 100vh;
   object-fit: cover;
 }
+
+// #p-home_slider {
+//   width: 100%;
+//   height: 100vh;
+// }
 
 .p-home__text {
   position: absolute;
@@ -15,13 +20,28 @@
 }
 
 .p-home__title {
-  color: #000;
+  color: #fff;
   font-size: 36px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
 
+.p-home__title span {
+  opacity: 0;
+}
+
+.p-home__title.glow span {
+  animation: glowAnimeOn 1s ease-out forwards;
+}
+
+@keyframes glowAnimeOn {
+  0% { opacity:0; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+	50% { opacity:1;text-shadow: 0 0 10px #fff,0 0 15px #fff; }
+	100% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+}
+
 .p-home__subtitle {
+  color: #fff;
   font-size: 30px;
   font-family: 'Times New Roman', Times, serif;
 }

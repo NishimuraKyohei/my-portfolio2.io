@@ -27,7 +27,6 @@ export default function animateSplash() {
     }
   });
 
-  アニメーションスタート
   bar.animate(1.0, function () {//バーを描画する割合を指定します 1.0 なら100%まで描画します
     $("#p-splash__text").fadeOut(10);//フェイドアウトでローディングテキストを削除
     $(".p-splash__loader--up").addClass("coverAnime");//カバーが上に上がるクラス追加
